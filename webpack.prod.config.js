@@ -1,11 +1,12 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-source-map',
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
@@ -19,8 +20,8 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
@@ -33,6 +34,7 @@ module.exports = {
               importLoaders: 1,
               module: true,
               localIdentName: '[name]_[local]_[hash:base64:5]',
+              minimize: true,
             },
           },
           {
@@ -59,6 +61,9 @@ module.exports = {
       template: __dirname + '/src/index.html',
       inject: 'body',
       filename: 'index.html',
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
     }),
   ],
 };
