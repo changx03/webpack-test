@@ -1,0 +1,37 @@
+.NaviItems {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  flex-flow: row;
+  width: auto;
+  text-transform: capitalize;
+  justify-content: flex-end;
+}
+
+.NaviItem {
+  margin: 0;
+  display: flex;
+  height: 100%;
+  width: auto;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.NaviItem a {
+  color: black;
+  text-decoration: none;
+  height: 100%;
+  width: auto;
+  padding: 16px 10px;
+  border-bottom: 4px solid transparent;
+}
+
+.NaviItem a:hover,
+.NaviItem a:active,
+.NaviItem a.active {
+  border-bottom: 4px solid #40a4c8;
+  color: #40a4c8;
+}
