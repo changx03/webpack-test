@@ -1,5 +1,11 @@
 {
   "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["> 3%", "last 2 Chrome versions", "not ie <= 9", "Firefox ESR"]
+      },
+      "useBuiltIns": true
+    }],
     "stage-2",
     "react"
   ],
